@@ -17,10 +17,24 @@ body, html {
 
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
 .wrapper {
     text-align: center;
-    width: 100%;
+    max-width: 100vw;
+    width: 100vw;
+    overflow-x: hidden;
+
 }
+
+.hero {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
 
 .content {
     background: rgba(0, 0, 0, 0.30);
