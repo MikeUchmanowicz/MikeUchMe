@@ -1,0 +1,15 @@
+# Git folders
+.git/
+.github/
+
+# Environment files
+.env
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Miscellaneous
+.DS_Store
+*.bak
+*.swp

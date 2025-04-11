@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Michal Uchmanowicz</title>
+  <meta http-equiv="Content-Type" content="text/vcard; charset=utf-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #1b1f22;
+      color: #fff;
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0;
+    }
+    h2 {
+      font-size: 1.2em;
+      font-weight: normal;
+      margin-top: 0.2em;
+      color: #aaa;
+    }
+    p {
+      line-height: 1.6;
+    }
+    .links a {
+      display: block;
+      color: #4fc3f7;
+      text-decoration: none;
+      margin: 4px 0;
+    }
+    .button {
+      margin-top: 2rem;
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #4fc3f7;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body onload="downloadVCF()">
+
+  <h1>Michal Uchmanowicz</h1>
+  <h2>Software Developer / Solutions Architect</h2>
+
+  <p><strong>About:</strong><br>
+  Proficient in Python Scripting & Full Stack Development with a Strong cloud background</p>
+
+  <p><strong>Email:</strong> <a href="mailto:Mike.Uchmanowicz.com">Mike.Uchmanowicz.com</a></p>
+  <p><strong>Phone:</strong> <a href="tel:+18477040455">847 704 0455</a></p>
+
+  <div class="links">
+    <strong>Links:</strong>
+    <a href="https://github.com/MikeUchmanowicz">GitHub</a>
+    <a href="https://www.linkedin.com/in/michal-uchmanowicz/">LinkedIn</a>
+    <a href="https://www.facebook.com/MikeUchmanowicz/">Facebook</a>
+    <a href="https://www.instagram.com/mike.uch/">Instagram</a>
+    <a href="https://EndlessCustoms.co">Endless Customs Co</a>
+  </div>
+
+  <a href="michal-uchmanowicz.vcf" class="button" download>Save Contact</a>
+
+  <script>
+    function downloadVCF() {
+      const link = document.createElement("a");
+      link.href = "me.vcf";
+      link.download = "me.vcf";
+      link.style.display = "none";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  </script>
+</body>
+</html>
