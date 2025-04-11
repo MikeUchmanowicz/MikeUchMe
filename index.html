@@ -2,29 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>MikeUch.Me</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Preload the background image for faster loading -->
+    <link rel="preload" as="image" href="/images/car_dark.png">
 </head>
-<body onload="downloadVCF()">
+<body>
     <div class="wrapper">
         <div class="hero">
             <div class="content">
-
                 <h1 class="title">Mike Uchmanowicz</h1>
-                <div class="divider"></div>
-                <p class="tagline"> 
-                    Limitless Coding Solutions
-                </p>
-
+                <p class="tagline">Limitless Coding Solutions</p>
                 <ul class="feature-list">
                     <li>Full Stack Dev</li>
                     <li>Python Scripting</li>
                     <li>Jr Cloud Architecture</li>
                     <li>GUI Tooling</li> 
                 </ul>
-
-
             </div>
         </div>
         <div class="navigation">
@@ -35,23 +31,30 @@
     </div>
 
     <!-- Modals -->
-    <div id="intro" class="modal">Intro content goes here.</div>
-
-    <div id="about" class="modal">
+    <div id="intro" class="modal">
+        <h2>Introduction</h2>
+        <p>Welcome to my personal website. I'm a developer passionate about creating efficient and innovative solutions.</p>
+        <button class="nav-btn" onclick="closeModal()">Close</button>
     </div>
 
-    <div id="contact" class="modal">Contact content goes here.
+    <div id="about" class="modal">
+        <h2>About Me</h2>
+        <p>I specialize in full-stack development, Python scripting, and cloud architecture. My goal is to create tools and applications that solve real-world problems efficiently.</p>
+        <button class="nav-btn" onclick="closeModal()">Close</button>
+    </div>
+
+    <div id="contact" class="modal">
+        <h2>Contact</h2>
         <div class="links">
-            <a href="https://github.com/MikeUchmanowicz">GitHub</a>
-            <a href="https://www.linkedin.com/in/michal-uchmanowicz/">LinkedIn</a>
-            <a href="https://www.facebook.com/MikeUchmanowicz/">Facebook</a>
-            <a href="https://www.instagram.com/mike.uch/">Instagram</a>
-            <a href="https://EndlessCustoms.co">Endless Customs Co</a>
+            <a href="https://github.com/MikeUchmanowicz" target="_blank" rel="noopener">GitHub</a>
+            <a href="https://www.linkedin.com/in/michal-uchmanowicz/" target="_blank" rel="noopener">LinkedIn</a>
+            <a href="https://www.facebook.com/MikeUchmanowicz/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://www.instagram.com/mike.uch/" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://EndlessCustoms.co" target="_blank" rel="noopener">Endless Customs Co</a>
         </div>
-        
         <p><strong>Email: </strong> <a href="mailto:Mike.Uchmanowicz@gmail.com">Mike.Uchmanowicz@gmail.com</a></p>
         <p><strong>Phone: </strong> <a href="tel:+18477040455">(847) 704-0455</a></p>
-        
+        <button class="nav-btn" onclick="closeModal()">Close</button>
     </div>
 
     <footer class="footer">
@@ -60,7 +63,6 @@
                 <p>Michal Arkadiusz Uchmanowicz</p>
             </div>
         </div>
-
     </footer>
     <script src="scripts.js"></script>
 </body>
