@@ -91,10 +91,11 @@ img {
 .feature-list {
     list-style: none;
     padding: 0;
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     letter-spacing: .2rem;
     text-align: left;
     font-size: 1.2rem;
+    gap: 1rem;
 }
 
 .feature-list li {
@@ -113,7 +114,7 @@ img {
 .navigation {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     gap: 1rem;
     min-width: 250px;
 }
@@ -128,7 +129,7 @@ img {
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     border-radius: 5px;
-    width: 100%;
+    width: 200px;
     letter-spacing: .2rem;
     font-size: 1.1rem;
     -webkit-appearance: none;
@@ -292,9 +293,11 @@ body.modal-open {
 
     .navigation {
         width: 100%;
+        align-items: center;
     }
 
     .nav-btn {
+        width: 200px;
         padding: 0.8rem 1.5rem;
         font-size: 1rem;
     }
