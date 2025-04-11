@@ -145,6 +145,8 @@ img {
 
 .modal {
     display: none;
+    flex-direction: column;
+    justify-content: space-between;
     position: fixed;
     top: 50%;
     left: 50%;
@@ -165,14 +167,71 @@ img {
 
 .modal h2 {
     color: #0088CA;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     font-size: 2rem;
 }
 
-.modal p {
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.modal .contact-info {
     font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: .25rem;
+    margin-bottom: 1rem;
+}
+
+
+.modal p a {
+    color: white; /* Set email link color to white */
+    text-decoration: none; /* Remove underline */
+}
+
+.modal p a:hover {
+    color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+}
+
+.modal .download-notice {
+    color: #0088CA;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background: rgba(0, 136, 202, 0.1);
+    border-radius: 5px;
+    text-align: center;
+    animation: fadeInOut 3s ease-out forwards;
+    -webkit-animation: fadeInOut 3s ease-out forwards;
 }
 
 .modal .links {
@@ -183,21 +242,21 @@ img {
 }
 
 .modal .links a {
-    color: #0088CA;
-    text-decoration: none;
-    padding: 0.5rem 1rem;
-    border: 1px solid #0088CA;
-    border-radius: 5px;
-    transition: all 0.3s ease;
+    color: white; /* Set link color to white */
+    text-decoration: none; /* Remove underline */
+    padding: 0.5rem 1rem; /* Add padding */
+    border: 1px solid white; /* Optional: white border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background 0.3s ease; /* Smooth transition */
 }
 
 .modal .links a:hover {
-    background: #0088CA;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: white; /* Ensure hover text color is white */
 }
 
 .modal.visible {
-    display: block;
+    display: flex;
 }
 
 body.modal-open {
@@ -345,5 +404,35 @@ body.modal-open {
     body, html {
         display: block;
         text-align: center;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    80% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-10px);
     }
 }
