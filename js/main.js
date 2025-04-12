@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modals = document.querySelectorAll('.modal');
     const body = document.querySelector('body');
+    const overlay = document.querySelector('.modal-overlay');
     const notice = document.querySelector('.download-notice');
 
     // Hide download notice initially
@@ -16,58 +17,54 @@ document.addEventListener('DOMContentLoaded', () => {
                 modal.classList.remove('visible');
                 setTimeout(() => {
                     modal.style.display = 'none';
-                }, 500);
+                }, 350);
             }
         });
         
-        // Show overlay first
-        const overlay = document.querySelector('.modal-overlay');
+        // First show overlay and trigger blur/scale
         overlay.style.display = 'block';
         overlay.offsetHeight; // Force reflow
-        
-        // Add modal-open to body which triggers blur
+        overlay.style.opacity = '1';
         body.classList.add('modal-open');
         
-        // Show and fade in the modal
-        const modal = document.getElementById(modalId);
-        modal.style.display = 'flex';
-        modal.offsetHeight; // Force reflow
-        modal.classList.add('visible');
+        // After background effect, show modal
+        setTimeout(() => {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            modal.offsetHeight; // Force reflow
+            modal.classList.add('visible');
 
-        // Show download notice when contact modal is opened
-        if (modalId === 'contact' && notice) {
-            // Reset notice position
-            notice.classList.remove('slide-out');
-            notice.style.display = 'block';
-            
-            // Trigger slide down
-            setTimeout(() => {
-                notice.classList.add('slide-in');
+            // Show download notice when contact modal is opened
+            if (modalId === 'contact' && notice) {
+                // Reset notice position
+                notice.classList.remove('slide-out');
+                notice.style.display = 'block';
                 
-                // After 3 seconds, slide up and trigger download
+                // Trigger slide down
                 setTimeout(() => {
-                    notice.classList.remove('slide-in');
-                    notice.classList.add('slide-out');
-                    downloadContactInfo();
+                    notice.classList.add('slide-in');
                     
-                    // Hide notice after slide up animation
+                    // After 3 seconds, slide up and trigger download
                     setTimeout(() => {
-                        notice.style.display = 'none';
-                    }, 750);
-                }, 3000);
-            }, 100);
-        }
+                        notice.classList.remove('slide-in');
+                        notice.classList.add('slide-out');
+                        downloadContactInfo();
+                        
+                        // Hide notice after slide up animation
+                        setTimeout(() => {
+                            notice.style.display = 'none';
+                        }, 750);
+                    }, 3000);
+                }, 100);
+            }
+        }, 350); // Wait for background effect to complete
     }
 
     // Function to close modal
     function closeModal() {
-        const overlay = document.querySelector('.modal-overlay');
         const modals = document.querySelectorAll('.modal');
         
-        // Remove modal-open class immediately to restore pointer events
-        body.classList.remove('modal-open');
-        
-        // Start fade out animations for modals
+        // First fade out the modal
         modals.forEach(modal => {
             if(modal.classList.contains('visible')) {
                 modal.classList.remove('visible');
@@ -77,10 +74,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Hide overlay
-        overlay.style.opacity = '0';
+        // After modal fades out, remove blur and scale
         setTimeout(() => {
-            overlay.style.display = 'none';
+            body.classList.remove('modal-open');
+            overlay.style.opacity = '0';
+            
+            // Hide overlay after fade
+            setTimeout(() => {
+                overlay.style.display = 'none';
+            }, 350);
         }, 350);
     }
 
@@ -95,7 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Close modals on clicking outside
-    document.querySelector('.modal-overlay').addEventListener('click', closeModal);
+    overlay.addEventListener('click', closeModal);
 
     // Close modals with 'Esc' key
     document.addEventListener('keydown', (e) => {

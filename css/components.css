@@ -76,15 +76,46 @@
     bottom: 0;
     background: rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
     z-index: 1000;
-    transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
+    transition: opacity 0.35s ease, backdrop-filter 0.35s ease, -webkit-backdrop-filter 0.35s ease;
 }
 
 /* Show the overlay when modal is open */
 body.modal-open .modal-overlay {
     display: block;
     opacity: 1;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+/* Add transition for body content */
+body {
+    transition: all 0.35s ease;
+}
+
+/* Keep the scale effect for content */
+body.modal-open .wrapper {
+    transform: scale(0.90);
+    transform-origin: center;
+}
+
+/* Add blur effect to wrapper */
+.wrapper {
+    transition: all 0.35s ease;
+    will-change: transform;
+    transform-origin: center;
+}
+
+/* Footer styles */
+.footer {
+    transition: all 0.35s ease;
+    width: 100%;
+}
+
+/* Remove the footer scale */
+body.modal-open .footer {
+    filter: blur(5px);
 }
 
 /* ===== MODALS ===== */
@@ -171,7 +202,7 @@ body.modal-open .modal-overlay {
     align-self: flex-end;
     margin-left: auto;
     width: auto;
-    font-size: 1.2rem;
+    font-size: 1rem;
     padding: 1rem 2rem;
 }
 
@@ -251,7 +282,6 @@ body.modal-open .modal-overlay {
 
 #contact .modal-button-container button {
     flex: 1;
-
     font-size: 1rem;
     padding: 1rem 2rem;
 
@@ -281,15 +311,4 @@ body.modal-open .modal-overlay {
 
 #contact.squeeze {
     transition: all 0.5s ease;
-}
-
-/* Add blur effect to wrapper */
-.wrapper {
-    transition: all 0.35s ease;
-    will-change: transform;
-}
-
-/* Add blur when modal is open */
-body.modal-open .wrapper {
-    transform: scale(0.98);
 }
