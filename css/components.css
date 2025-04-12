@@ -1,6 +1,6 @@
 /* ===== TITLE AND TAGLINE ===== */
 .title {
-    font-size: 3.5rem;
+    font-size: 4.5rem;
     font-weight: 800;
     margin: 0;
     text-transform: uppercase;
@@ -14,7 +14,7 @@
 }
 
 .tagline {
-    font-size: 1.8rem;
+    font-size: 2.5rem;
     color: #0088CA;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
     margin: 0;
@@ -29,7 +29,7 @@
     margin: 0;
     letter-spacing: .2rem;
     text-align: left;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -49,12 +49,11 @@
     color: #fff;
     text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
+    transition: all 0.5s ease;
     border-radius: 5px;
     width: 14rem;
     letter-spacing: .2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -69,145 +68,205 @@
 /* ===== MODAL OVERLAY ===== */
 .modal-overlay {
     display: none;
+    opacity: 0;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(0);
     z-index: 1000;
+    transition: opacity 0.35s ease, backdrop-filter 0.35s ease;
 }
 
 /* Show the overlay when modal is open */
 body.modal-open .modal-overlay {
     display: block;
+    opacity: 1;
+    backdrop-filter: blur(10px);
 }
 
 /* ===== MODALS ===== */
 .modal {
     display: none;
+    opacity: 0;
     flex-direction: column;
     justify-content: space-between;
     gap: 3rem;
     position: fixed;
-    top: 40%;
     left: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
     background: #1b1f22;
     padding: 2rem;
     border-radius: 10px;
     width: 90%;
-    max-width: 60rem;
-    max-height: 40rem;
+    max-width: 70rem;
+    max-height: 60rem;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
     z-index: 1001;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+    transition: all 0.35s ease;
+    align-items: center;
+    box-sizing: border-box;
 }
 
 .modal.visible {
     display: flex;
+    opacity: 1;
 }
 
 .modal-title {
     color: #0088CA;
     margin: 0;
     font-size: 4rem;
+    letter-spacing: .35rem;
 }
 
-/* Modal Download Notice */
-#contact .download-notice {
+.modal-reference {
+    color: #0088CA;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.modal .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    margin: 0;
+}
+
+.modal .links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 5px;
+    transition: background 0.35s ease;
+    margin: 0;
+    white-space: nowrap;
+    font-size: 1rem;
+}
+
+.modal ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Right-align close buttons for intro and about modals */
+#intro .close-btn,
+#about .close-btn {
+    align-self: flex-end;
+    margin-left: auto;
+    width: auto;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+}
+
+.modal p {
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 1.2rem;
+    margin: 0;
+    letter-spacing: .25rem;
+}
+
+/* Download Notice */
+.download-notice {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     color: #0088CA;
     font-size: 1.2rem;
     font-style: italic;
     margin: 0;
     padding: 1rem;
-    background: rgba(0, 136, 202, 0.1);
-    border-radius: 5px;
+    background: rgba(27, 31, 34, 0.95);
+    backdrop-filter: blur(5px);
     text-align: center;
-    animation: fadeInOut 3s ease-out forwards;
-    -webkit-animation: fadeInOut 3s ease-out forwards;
-    transition: all 0.3s ease;
-    height: auto;
+    transition: transform 0.75s ease;
     opacity: 1;
-    margin-top: 0;
+    z-index: 1002;
+    transform: translateY(-100%);
+    border-bottom: 1px solid rgba(0, 136, 202, 0.3);
 }
 
-#contact .download-notice.fade-out {
-    opacity: 0;
-    margin-bottom: 0;
-    margin-top: 0;
-
-    height: 0;
-    overflow: hidden;
+.download-notice.slide-in {
+    transform: translateY(0);
 }
 
-/* Modal Links */
-#contact .links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin: 0;
-
+.download-notice.slide-out {
+    transform: translateY(-100%);
 }
 
-#contact .links a {
-    color: white; /* Set link color to white */
-    text-decoration: none; /* Remove underline */
-    padding: 0.5rem 1rem; /* Add padding */
+#contact {
+    padding: 2rem;
+    gap: 2rem;
+    width: 90%;
+    max-width: 70rem;
+    box-sizing: border-box;
+}
 
-    border: 1px solid white; /* Optional: white border */
-    border-radius: 5px; /* Rounded corners */
-    transition: background 0.3s ease; /* Smooth transition */
-}
-#contact .links a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Light background on hover */
-    color: white; /* Ensure hover text color is white */
-}
 #contact .contact-info {
     font-size: 1rem;
     display: flex;
     flex-direction: column;
-    align-items: left;
+    align-items: flex-start;
     gap: 1rem;
     margin: 0;
-}
-#contact .contact-info a {
-    color: white; /* Set email link color to white */
-    text-decoration: none; /* Remove underline */
-}
-#contact .contact-info p {
-    margin: 0;
-}
-#contact .contact-info a:hover {
-    color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
 }
 
-/* Modal Button Container */
+#contact .contact-info a {
+    color: #0088CA;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+#contact .contact-info a:hover {
+    color: #fff;
+}
+
 #contact .modal-button-container {
     display: flex;
-    justify-content: space-around;
-    gap: 2rem;
+    justify-content: space-between;
     width: 100%;
+    gap: 1rem;
 }
+
 #contact .modal-button-container button {
-    font-size: 1.2rem;
+    flex: 1;
+
+    font-size: 1rem;
     padding: 1rem 2rem;
-    width: 100%;
+
 }
-#contact .modal-button-container .download-btn {
+
+#contact  .download-btn {
     background: #0088CA;
-    border-color: #0088CA;
+    color: white;
+    border: none;
 }
+
 #contact .download-btn:hover {
     background: #006699;
-    border-color: #006699;
-    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* Modal Animation Classes */
@@ -217,9 +276,20 @@ body.modal-open .modal-overlay {
 
 #contact.slide-up {
     transform: translateY(-10px);
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 #contact.squeeze {
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
+}
+
+/* Add blur effect to wrapper */
+.wrapper {
+    transition: all 0.35s ease;
+    will-change: transform;
+}
+
+/* Add blur when modal is open */
+body.modal-open .wrapper {
+    transform: scale(0.98);
 }

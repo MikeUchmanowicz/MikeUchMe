@@ -9,14 +9,16 @@
     <!-- Preload the background image for faster loading -->
     <link rel="preload" as="image" href="/images/car_dark.png">
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <script src="js/main.js" defer></script>
+    <div class="download-notice">📥 Contact information will download automatically</div>
     <div class="wrapper">
         <div class="hero">
             <div class="content">
                 <p class="title">Mike Uchmanowicz</p>
-                <p class="tagline">Limitless Software Solutions</p>
                 <ul class="feature-list">
                     <li>Solutions Architect</li>
                     <li>Full Stack Dev</li>
@@ -36,23 +38,51 @@
     <!-- Modal Overlay -->
     <div class="modal-overlay"></div>
 
-    <!-- Modals -->
     <div id="intro" class="modal">
-        <h2>Introduction</h2>
-        <p>Welcome to my personal website. I'm a developer passionate about creating efficient and innovative solutions.</p>
+        <h2 class="modal-title">Professional Info</h2>
+        
+        <ul>
+            <li><strong>Name:</strong> Michal Uchmanowicz</li>
+            <li><strong>Title:</strong> Software Developer / Architect</li>
+            <li><strong>Location:</strong> Phoenix, AZ</li>
+            <li><strong>Languages:</strong> English (Native), Polish (Professional Working Proficiency)</li>
+            <li><strong>Education:</strong> B.S. in Software Development, Grand Canyon University (GPA: 3.97, May 2023)</li>
+            <li><strong>Awards:</strong> Distinguished Trustee Scholarship, William Rainey Harper College</li>
+            <li><strong>Workplace:</strong> One of two Developers at Hoffenmer Inc. — 
+                Building internal tools, APIs, and full-stack platforms for DOT paperwork automation</li>
+            <li><strong>Past Roles:</strong> Transportation Consultant & Consortium Admin Assistant at Hoffenmer Inc. (2019–2023)</li>
+            <li><strong>Software Languages:</strong> Python, Java, C#, JavaScript, HTML/CSS, SQL, C++</li>
+            <li><strong>Frameworks & Libraries:</strong> FastAPI,Django, Spring Boot, ASP.NET, Angular, Express, .NET Core, Bootstrap</li>
+            <li><strong>Concepts & Patterns:</strong> OOP, IoC, SoC, N-Layer Architecture, MVC, REST APIs, Agile/Scrum, SDLC</li>
+            <li><strong>Databases:</strong> MySQL, MongoDB, PHPMyAdmin, Workbench, Compass</li>
+            <li><strong>Cloud & DevOps:</strong> AWS, Google Cloud, Azure, Heroku, Docker, Pipelines</li>
+            <li><strong>Tools:</strong> GitHub, Postman, Jira, Maven, MAMP, NodeJS, JUnit, Linux Terminal</li>
+            <li><strong>Data Structures:</strong> Linked Lists, Stacks, Hash Tables, BSTs, Recursion, DFS</li>
+        </ul>
+    
+        <p>
+            <span class="modal-reference">Please see my <a onclick="showModal('contact')" href="#">contact</a> page to get in touch or follow me on my socials.</span>
+        </p>
+    
         <button class="nav-btn close-btn" onclick="closeModal()">Close</button>
     </div>
 
     <div id="about" class="modal">
         <h2 class="modal-title">About Me</h2>
         <p>
-            I'm Michal Uchmanowicz, a software developer with a strong foundation in full-stack development, cloud infrastructure, and building scalable internal tools.
-            I earned my B.S. in Software Development from Grand Canyon University, graduating with a 3.97 GPA and a passion for crafting efficient, robust solutions — from Dockerized webapps on AWS to embedded systems experiments.
-            Professionally, I work as the sole developer at Hoffenmer Inc., where I built a comprehensive internal platform for managing DOT paperwork, client communications, and automation workflows.
-            My tech stack spans Java, Python, Spring Boot, Django, .NET, Angular, and AWS — and I'm always eager to tackle the next big challenge.
-            Outside of code, I run a car customization side business at <a href="https://endlesscustoms.co" target="_blank">EndlessCustoms.co</a>, where I wrench on my 650hp single-turbo E93 BMW 335i powered by a Precision 6266 and E85.
+            I'm Michal Uchmanowicz, a software developer with a strong foundation in full-stack development, cloud infrastructure, and scalable internal tooling.
+            I earned my B.S. in Software Development from Grand Canyon University with a 3.97 GPA and a passion for building efficient, reliable systems — from Dockerized webapps on AWS to embedded systems experiments.
+            Currently, I serve as one of two developers at Hoffenmer Inc., where I architect and maintain a comprehensive internal platform for managing DOT compliance workflows, client communication, and automation.
+            My stacks generally include Python, Java, JavaScript, FastAPI, Django, Spring Boot, and AWS — and I'm always eager to tackle complex, real-world challenges.
+        </p>
+        <p>
+            Outside of work, I run a car customization side business at <a href="https://endlesscustoms.co" target="_blank">Endless Customs Co</a>, where I wrench on my ~650hp single-turbo E93 BMW 335i powered by a Precision 6266 and E85.
             I'm mechanically savvy, detail-obsessed, and hands-on — whether it's software or hardware.
-            I also enjoy basketball, listening to reggae, and staying curious about machine learning and embedded tech.
+            I also enjoy basketball, reggae music, and diving into topics like machine learning and embedded tech. Recently i've purchased an insta360 x3 and have been diving into the world of 360 video production. 
+        </p>
+
+        <p>
+            <span class="modal-reference">Please see my <a onclick="showModal('contact')" href="#">contact</a> page to get in touch or follow me on my socials.</span>
         </p>
         
         <button class="nav-btn close-btn" onclick="closeModal()">Close</button>
@@ -60,23 +90,23 @@
 
     <div id="contact" class="modal">
         <h2 class="modal-title">Contact Me</h2>
-        <span class="download-notice">📥 Contact information will download automatically</span>
         <div class="links">
             <a href="https://github.com/MikeUchmanowicz" target="_blank" rel="noopener">GitHub</a>
             <a href="https://www.linkedin.com/in/michal-uchmanowicz/" target="_blank" rel="noopener">LinkedIn</a>
             <a href="https://www.facebook.com/MikeUchmanowicz/" target="_blank" rel="noopener">Facebook</a>
             <a href="https://www.instagram.com/mike.uch/" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://EndlessCustoms.co" target="_blank" rel="noopener">Endless Customs Co</a>
-            <a href="https://steamcommunity.com/id/CryogenicCrysis/" target="_blank" rel="noopener">Steam</a>
             <a href="https://discord.com/users/CryogenicCrysis" target="_blank" rel="noopener">Discord</a>
             <a href="https://www.youtube.com/@MikeUchmanowicz" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://EndlessCustoms.co" target="_blank" rel="noopener">Endless Customs Co</a>
+            <a href="https://www.instagram.com/endlesscustomsco/" target="_blank" rel="noopener"><- ECC Instagram</a>
+            <a href="https://steamcommunity.com/id/CryogenicCrysis/" target="_blank" rel="noopener">Steam</a>
         </div>
         <div class="contact-info">
             <span><strong>Email:</strong> <a href="mailto:Mike.Uchmanowicz@gmail.com">Mike.Uchmanowicz@gmail.com</a></span>
             <span><strong>Phone:</strong> <a href="tel:+18477040455">(847) 704-0455</a></span>
         </div>
         <div class="modal-button-container">
-            <button class="nav-btn download-btn" onclick="downloadContactInfo()">Download</button>
+            <button class="nav-btn download-btn" onclick="downloadContactInfo()">Add to Contacts</button>
             <button class="nav-btn close-btn" onclick="closeModal()">Close</button>
         </div>
     </div>

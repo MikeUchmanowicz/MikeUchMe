@@ -1,56 +1,87 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modals = document.querySelectorAll('.modal');
     const body = document.querySelector('body');
+    const notice = document.querySelector('.download-notice');
+
+    // Hide download notice initially
+    if (notice) {
+        notice.style.display = 'none';
+    }
 
     // Function to show modal and handle vCard download for contact
     function showModal(modalId) {
+        // Close any open modals first
+        document.querySelectorAll('.modal').forEach(modal => {
+            if(modal.classList.contains('visible')) {
+                modal.classList.remove('visible');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 500);
+            }
+        });
+        
+        // Show overlay first
+        const overlay = document.querySelector('.modal-overlay');
+        overlay.style.display = 'block';
+        overlay.offsetHeight; // Force reflow
+        
+        // Add modal-open to body which triggers blur
         body.classList.add('modal-open');
-        document.querySelector('.modal-overlay').style.display = 'block';
+        
+        // Show and fade in the modal
         const modal = document.getElementById(modalId);
+        modal.style.display = 'flex';
+        modal.offsetHeight; // Force reflow
         modal.classList.add('visible');
 
         // Show download notice when contact modal is opened
-        if (modalId === 'contact') {
-            const notice = document.querySelector('.download-notice');
-            if (notice) {
-                // Show the notice
-                notice.style.display = 'block';
-                notice.style.opacity = '1';
-                notice.classList.remove('fade-out');
+        if (modalId === 'contact' && notice) {
+            // Reset notice position
+            notice.classList.remove('slide-out');
+            notice.style.display = 'block';
+            
+            // Trigger slide down
+            setTimeout(() => {
+                notice.classList.add('slide-in');
                 
-                // After 3 seconds, fade out the notice and then start download
+                // After 3 seconds, slide up and trigger download
                 setTimeout(() => {
-                    // Add squeeze class to the modal BEFORE fading out the notice
-                    modal.classList.add('squeeze');
+                    notice.classList.remove('slide-in');
+                    notice.classList.add('slide-out');
+                    downloadContactInfo();
                     
-                    // Fade out the notice
-                    notice.classList.add('fade-out');
-                    
-                    // After fade out animation completes (0.5s), hide the notice and start download
+                    // Hide notice after slide up animation
                     setTimeout(() => {
-                        // Hide the notice
                         notice.style.display = 'none';
-                        
-                        // Start download after notice is hidden
-                        downloadContactInfo();
-                        
-                        // Remove the squeeze class after animation completes
-                        setTimeout(() => {
-                            modal.classList.remove('squeeze');
-                        }, 300); // Match this with the CSS transition duration
-                    }, 500);
+                    }, 750);
                 }, 3000);
-            }
+            }, 100);
         }
     }
 
     // Function to close modal
     function closeModal() {
+        const overlay = document.querySelector('.modal-overlay');
+        const modals = document.querySelectorAll('.modal');
+        
+        // Remove modal-open class immediately to restore pointer events
         body.classList.remove('modal-open');
-        document.querySelector('.modal-overlay').style.display = 'none';
-        document.querySelectorAll('.modal').forEach(modal => {
-            modal.classList.remove('visible');
+        
+        // Start fade out animations for modals
+        modals.forEach(modal => {
+            if(modal.classList.contains('visible')) {
+                modal.classList.remove('visible');
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 350);
+            }
         });
+        
+        // Hide overlay
+        overlay.style.opacity = '0';
+        setTimeout(() => {
+            overlay.style.display = 'none';
+        }, 350);
     }
 
     // Function to download vCard
@@ -73,14 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Prevent scrolling on touch devices
-    document.addEventListener('touchmove', function(e) {
-        if (!e.target.closest('.modal')) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-
-    // Assign functions to window object
+    // Make functions globally available
     window.showModal = showModal;
     window.closeModal = closeModal;
     window.downloadContactInfo = downloadContactInfo;
