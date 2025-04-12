@@ -8,14 +8,25 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.modal-overlay').style.display = 'block';
         document.getElementById(modalId).classList.add('visible');
 
-        // Download vCard when contact modal is opened
+        // Show download notice when contact modal is opened
         if (modalId === 'contact') {
-            downloadContactInfo();
             const notice = document.querySelector('.download-notice');
             if (notice) {
-                // Remove the notice after animation completes
+                // Show the notice
+                notice.style.display = 'block';
+                notice.style.opacity = '1';
+                
+                // After 3 seconds, fade out the notice and then start download
                 setTimeout(() => {
-                    notice.style.display = 'none';
+                    // Fade out the notice
+                    notice.style.opacity = '0';
+                    
+                    // After fade out animation completes (0.5s), hide the notice and start download
+                    setTimeout(() => {
+                        notice.style.display = 'none';
+                        // Start download after notice is hidden
+                        downloadContactInfo();
+                    }, 500);
                 }, 3000);
             }
         }
@@ -32,32 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to download vCard
     function downloadContactInfo() {
-        const contactInfo = {
-            name: "Michal Arkadiusz Uchmanowicz",
-            email: "Mike.Uchmanowicz@gmail.com",
-            phone: "(847) 704-0455",
-            links: {
-                github: "https://github.com/MikeUchmanowicz",
-                linkedin: "https://www.linkedin.com/in/michal-uchmanowicz/",
-                facebook: "https://www.facebook.com/MikeUchmanowicz/",
-                instagram: "https://www.instagram.com/mike.uch/",
-                website: "https://EndlessCustoms.co"
-            }
-        };
-
-        // Create a 3-second delay before downloading
-        setTimeout(() => {
-            const dataStr = JSON.stringify(contactInfo, null, 2);
-            const dataBlob = new Blob([dataStr], { type: 'application/json' });
-            const url = window.URL.createObjectURL(dataBlob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'contact_info.json';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            window.URL.revokeObjectURL(url);
-        }, 5000);
+        const link = document.createElement('a');
+        link.href = 'Michal_Uchmanowicz.vcf';
+        link.download = 'Michal_Uchmanowicz.vcf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 
     // Close modals on clicking outside
