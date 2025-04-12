@@ -1,0 +1,20 @@
+/* ===== MAIN CSS FILE ===== */
+/* This file imports all CSS files in the correct order */
+
+/* Base styles */
+@import url('base.css');
+
+/* Layout components */
+@import url('layout.css');
+
+/* UI components */
+@import url('components.css');
+
+/* Animations */
+@import url('animations.css');
+
+/* Responsive styles */
+@import url('responsive.css');
+
+/* Custom fonts */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;800&display=swap');

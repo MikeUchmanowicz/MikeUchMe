@@ -1,0 +1,98 @@
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .content {
+        padding: 2rem 1rem;
+        gap: 1rem;
+    }
+
+    .wrapper {
+        flex-direction: column;
+        top: -10vh;
+    }
+
+    .hero {
+        text-align: center;
+        min-width: unset;
+    }
+
+    .title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .tagline {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .feature-list {
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .feature-list li {
+        padding-left: 0;
+    }
+
+    .feature-list li::before {
+        display: none;
+    }
+
+    .navigation {
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .nav-btn {
+        width: 200px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .degree-info p {
+        font-size: 0.75rem;
+        letter-spacing: 0.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+        letter-spacing: .2rem;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+        letter-spacing: .2rem;
+    }
+    
+    .feature-list {
+        letter-spacing: .15rem;
+    }
+    
+    .modal {
+        padding: 1.5rem;
+    }
+
+    .modal-title {
+        font-size: 2rem;
+    }
+}
+
+/* ===== FALLBACKS ===== */
+/* Fallback for older browsers */
+@supports not (display: flex) {
+    .wrapper {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        margin: 50vh auto;
+        transform: translateY(-50%);
+    }
+    
+    body, html {
+        display: block;
+        text-align: center;
+    }
+} 
