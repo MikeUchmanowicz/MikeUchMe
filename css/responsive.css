@@ -1,5 +1,5 @@
 /* ===== RESPONSIVE DESIGN ===== */
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .content {
         padding: 2rem 1rem;
         gap: 1rem;
@@ -7,7 +7,7 @@
 
     .wrapper {
         flex-direction: column;
-        top: -10vh;
+        top: -5vh;
     }
 
     .hero {
@@ -16,7 +16,7 @@
     }
 
     .title {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         text-align: center;
     }
 
@@ -27,7 +27,7 @@
 
     .feature-list {
         text-align: center;
-        font-size: 1.1rem;
+        font-size: 1.5em;
     }
 
     .feature-list li {
@@ -40,22 +40,80 @@
 
     .navigation {
         align-items: center;
-        gap: 1.5rem;
+        gap: 2rem;
     }
 
     .nav-btn {
         width: 200px;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.2rem;
     }
     
     .degree-info p {
         font-size: 0.75rem;
-        letter-spacing: 0.1rem;
+        letter-spacing: 0.25rem;
     }
+
+    /* Modal adjustments for mobile */
+    #intro.modal,
+    #about.modal {
+        width: 90%;
+        height: 90vh;
+        padding: 1.5rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #intro .modal-scroll-area,
+    #about .modal-scroll-area {
+        max-height: calc(90vh - 3rem);
+    }
+
+    #contact.modal {
+        width: auto;
+        height: auto;
+        max-width: 90%;
+        padding: 1.5rem;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    #contact .modal-scroll-area {
+        max-height: none;
+    }
+
+    .modal-title {
+        font-size: 2.5rem;
+    }
+
+    .modal p {
+        font-size: 1rem;
+        letter-spacing: .15rem;
+    }
+
+    .modal .links a {
+        font-size: 1rem;
+    }
+
+    .modal ul {
+        font-size: 1rem;
+    }
+
+    #contact .contact-info {
+        font-size: 1rem;
+    }
+
+    #intro button,
+    #about button,
+    #contact button {
+        padding: .5rem 1rem;
+        font-size: .75rem;
+        width: auto;
+    }
+
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
     .title {
         font-size: 2rem;
         letter-spacing: .2rem;
@@ -68,14 +126,35 @@
     
     .feature-list {
         letter-spacing: .15rem;
+        font-size: 1.1rem;
+    }
+
+    .nav-btn {
+        font-size: 1.2rem;
     }
     
-    .modal {
-        padding: 1.5rem;
+    #intro.modal,
+    #about.modal,
+    #contact.modal {
+        padding: 1rem;
+    }
+
+    #intro .modal-scroll-area,
+    #about .modal-scroll-area {
+        max-height: calc(90vh - 2rem);
     }
 
     .modal-title {
         font-size: 2rem;
+    }
+
+    .degree-info p {
+        font-size: 0.5rem;
+        letter-spacing: 0.25rem;
+    }
+
+    #contact .contact-info {
+        font-size: 0.9rem;
     }
 }
 

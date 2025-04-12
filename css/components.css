@@ -29,7 +29,7 @@
     margin: 0;
     letter-spacing: .2rem;
     text-align: left;
-    font-size: 1.5rem;
+    font-size: 2rem;
     display: flex;
     flex-direction: column;
     gap: .5rem;
@@ -41,28 +41,31 @@
     padding-left: 1.5rem;
 }
 
-/* ===== NAVIGATION BUTTONS ===== */
-.nav-btn {
+button {
     background: transparent;
     border: 2px solid #fff;
-    padding: 1.5rem 2rem;
-    color: #fff;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: all 0.5s ease;
     border-radius: 5px;
-    width: 14rem;
-    letter-spacing: .2rem;
-    font-size: 2rem;
-    -webkit-appearance: none;
-    appearance: none;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.35s ease;
 }
 
-.nav-btn:hover {
+button:hover {
     background: #fff;
     color: #1b1f22;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== NAVIGATION BUTTONS ===== */
+.nav-btn {
+    padding: 1.5rem 2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    font-size: 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14rem;
 }
 
 /* ===== MODAL OVERLAY ===== */
@@ -122,26 +125,67 @@ body.modal-open .footer {
 .modal {
     display: none;
     opacity: 0;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 3rem;
     position: fixed;
     left: 50%;
-    top: 45%;
+    top: 45%;  /* Slightly offset up on desktop */
     transform: translate(-50%, -50%);
     background: #1b1f22;
     padding: 2rem 3rem;
     border-radius: 10px;
     width: 90%;
     max-width: 70rem;
-    max-height: 60rem;
-    overflow-y: auto;
-    overflow-x: hidden;
+    max-height: 80vh;
     z-index: 1001;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.35s ease;
-    align-items: center;
     box-sizing: border-box;
+}
+
+#contact {
+    top: 35%;
+}
+
+.modal-scroll-area {
+    max-height: calc(80vh - 4rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-right: -1rem;
+    padding-right: 1rem;
+}
+
+.modal-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+    align-items: center;
+}
+
+/* Custom scrollbar styling */
+.modal-scroll-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-scroll-area::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 10px;
+}
+
+.modal-scroll-area::-webkit-scrollbar-thumb {
+    background: #0088CA;
+    border-radius: 5px;
+    border: 2px solid #1b1f22;
+}
+
+.modal-scroll-area::-webkit-scrollbar-thumb:hover {
+    background: #006699;
+}
+
+/* Firefox scrollbar styling */
+.modal-scroll-area {
+    scrollbar-width: thin;
+    scrollbar-color: #0088CA #1b1f22;
 }
 
 .modal.visible {
@@ -209,8 +253,11 @@ body.modal-open .footer {
     align-self: flex-end;
     margin-left: auto;
     width: auto;
-    font-size: 1rem;
+}
+
+.modal button {
     padding: 1rem 2rem;
+    font-size: 1.3rem;
 }
 
 .modal p {
@@ -289,9 +336,6 @@ body.modal-open .footer {
 
 #contact .modal-button-container button {
     flex: 1;
-    font-size: 1rem;
-    padding: 1rem 2rem;
-
 }
 
 #contact  .download-btn {
