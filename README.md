@@ -80,10 +80,9 @@ MikeUch.Me/
 
 The website is fully responsive with breakpoints at:
 
-- Large screens (1200px and above)  
-- Medium screens (992px to 1199px)  
-- Small screens (768px to 991px)  
-- Extra small screens (below 768px)  
+- Large screens (800px and above)  
+- Medium screens (Below 800px)  
+- Small screens (below 500px)  
 
 ## Browser Support
 
