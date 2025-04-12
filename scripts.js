@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function showModal(modalId) {
         body.classList.add('modal-open');
         document.querySelector('.modal-overlay').style.display = 'block';
-        document.getElementById(modalId).classList.add('visible');
+        const modal = document.getElementById(modalId);
+        modal.classList.add('visible');
 
         // Show download notice when contact modal is opened
         if (modalId === 'contact') {
@@ -15,17 +16,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Show the notice
                 notice.style.display = 'block';
                 notice.style.opacity = '1';
+                notice.classList.remove('fade-out');
                 
                 // After 3 seconds, fade out the notice and then start download
                 setTimeout(() => {
+                    // Add squeeze class to the modal BEFORE fading out the notice
+                    modal.classList.add('squeeze');
+                    
                     // Fade out the notice
-                    notice.style.opacity = '0';
+                    notice.classList.add('fade-out');
                     
                     // After fade out animation completes (0.5s), hide the notice and start download
                     setTimeout(() => {
+                        // Hide the notice
                         notice.style.display = 'none';
+                        
                         // Start download after notice is hidden
                         downloadContactInfo();
+                        
+                        // Remove the squeeze class after animation completes
+                        setTimeout(() => {
+                            modal.classList.remove('squeeze');
+                        }, 300); // Match this with the CSS transition duration
                     }, 500);
                 }, 3000);
             }
