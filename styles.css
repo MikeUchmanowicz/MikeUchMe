@@ -86,7 +86,7 @@ img {
 .feature-list {
     list-style: none;
     padding: 0;
-    margin: 1rem 0 ;
+    margin: 1rem 0 .5rem 0;
     letter-spacing: .2rem;
     text-align: left;
     font-size: 1.2rem;
