@@ -71,4 +71,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Assign functions to window object
     window.showModal = showModal;
     window.closeModal = closeModal;
+    window.downloadContactInfo = downloadContactInfo;
 });
