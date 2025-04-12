@@ -53,8 +53,8 @@ img {
 }
 
 .content {
-    background: rgba(0, 0, 0, 0.30);
-    padding: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    padding: 2rem;
     border-radius: 10px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
@@ -63,7 +63,7 @@ img {
 .title {
     font-size: 3.5rem;
     font-weight: 800;
-    margin: 0;
+    margin: -.3rem;
     text-transform: uppercase;
     background: linear-gradient(40deg, #0088CA, #f0f5ff);
     -webkit-background-clip: text;
@@ -83,15 +83,10 @@ img {
     text-align: left;
 }
 
-.tagline span {
-    color: #ff0055;
-    font-weight: bold;
-}
-
 .feature-list {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0;
+    margin: 1rem 0 ;
     letter-spacing: .2rem;
     text-align: left;
     font-size: 1.2rem;
@@ -104,18 +99,11 @@ img {
     padding-left: 1.5rem;
 }
 
-/* .feature-list li::before {
-    content: "→";
-    position: absolute;
-    left: 0;
-    color: #0088CA;
-} */
-
 .navigation {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 2.2rem;
     min-width: 250px;
 }
 
@@ -129,9 +117,9 @@ img {
     transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
     border-radius: 5px;
-    width: 200px;
+    width: 14rem;
     letter-spacing: .2rem;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -165,28 +153,28 @@ img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-.modal h2 {
+.modal-title {
     color: #0088CA;
-    margin: 1rem 0;
-    font-size: 2rem;
+    margin: .75rem 0;
+    font-size: 4rem;
 }
 
 .modal .contact-info {
-    font-size: 1.1rem;
-    display: flex;
+    font-size: 1rem;
+    display: block;
     flex-direction: column;
     align-items: left;
-    gap: .25rem;
-    margin-bottom: 1rem;
+    gap: .5rem;
+
 }
 
 
-.modal p a {
+.modal .contact-info a {
     color: white; /* Set email link color to white */
     text-decoration: none; /* Remove underline */
 }
 
-.modal p a:hover {
+.modal .contact-info a:hover {
     color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
 }
 
@@ -314,6 +302,11 @@ body.modal-open {
 
 /* Media queries for responsive design */
 @media (max-width: 768px) {
+
+    .content {
+        padding: 1rem;
+    }
+
     .wrapper {
         flex-direction: column;
         padding: 1rem;
@@ -327,7 +320,7 @@ body.modal-open {
     }
 
     .title {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         text-align: center;
     }
 
@@ -350,8 +343,8 @@ body.modal-open {
     }
 
     .navigation {
-        width: 100%;
         align-items: center;
+        gap: 1.5rem;
     }
 
     .nav-btn {
@@ -380,8 +373,8 @@ body.modal-open {
         padding: 1.5rem;
     }
 
-    .modal h2 {
-        font-size: 1.5rem;
+    .modal-title {
+        font-size: 2rem;
     }
 
     .modal p {
@@ -436,9 +429,29 @@ body.modal-open {
     }
 }
 
-.modal .close-btn {
-    align-self: flex-end;
+.modal-button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.modal-button-container .close-btn {
+
     margin-top: .5rem;
+}
+
+.modal-button-container .download-btn {
+    background: #0088CA;
+    border-color: #0088CA;
+
+    margin-top: .5rem;
+}
+
+.download-btn:hover {
+    background: #006699;
+    border-color: #006699;
+    color: #fff;
 }
 
 /* Add an overlay that covers everything except the modal */
