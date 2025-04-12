@@ -30,4 +30,13 @@ img {
     height: 100vw;
     width: 100vw;
     display: block;
-} 
+}
+
+a {
+    color: #0088CA;
+}
+
+a:visited {
+    color: #0088CA;
+}
+
