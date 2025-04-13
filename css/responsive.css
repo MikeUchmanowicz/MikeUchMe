@@ -50,9 +50,9 @@
     }
     
     .download-notice {
-        font-size: .75rem;
-        letter-spacing: .1rem;
-        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        letter-spacing: .25rem;
+        padding: 1rem 1.5rem;
     }
 
     .degree-info p {
@@ -163,6 +163,11 @@
         gap: 1.5rem;
     }
 
+    .download-notice {
+        font-size: .75rem;
+        letter-spacing: .1rem;
+        padding: 0.75rem 1rem;
+    }
 
     .modal-title {
         font-size: 2rem;

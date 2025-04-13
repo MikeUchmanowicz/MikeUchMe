@@ -96,6 +96,16 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.removeChild(link);
     }
 
+    // Function to download Resume
+    function downloadResume() {
+        const link = document.createElement('a');
+        link.href = 'Michal_Uchmanowicz_Resume.pdf';
+        link.download = 'Michal_Uchmanowicz_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     // Close modals on clicking outside
     overlay.addEventListener('click', closeModal);
 
@@ -110,4 +120,5 @@ document.addEventListener('DOMContentLoaded', () => {
     window.showModal = showModal;
     window.closeModal = closeModal;
     window.downloadContactInfo = downloadContactInfo;
+    window.downloadResume = downloadResume;
 });

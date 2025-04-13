@@ -249,7 +249,7 @@ body.modal-open .footer {
 }
 
 /* Right-align close buttons for intro and about modals */
-#intro .close-btn,
+
 #about .close-btn {
     align-self: flex-end;
     margin-left: auto;
@@ -268,6 +268,11 @@ body.modal-open .footer {
     font-size: 1.1rem;
     margin: 0;
     letter-spacing: .25rem;
+    text-align: justify;
+    text-justify: inter-word; /* improves spacing */
+    overflow-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
 }
 
 /* Download Notice */
@@ -325,39 +330,26 @@ body.modal-open .footer {
     color: #fff;
 }
 
-#contact .modal-button-container {
+.modal .modal-button-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
     gap: 1rem;
 }
 
-#contact .modal-button-container button {
+.modal .modal-button-container button {
     flex: 1;
 }
 
-#contact  .download-btn {
+.modal  .download-btn {
     background: #0088CA;
     color: white;
     border: none;
 }
 
-#contact .download-btn:hover {
+.modal .download-btn:hover {
     background: #006699;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Modal Animation Classes */
-#contact.animate {
-    transform: translateY(-10px);
-}
-
-#contact.slide-up {
-    transform: translateY(-10px);
-    transition: transform 0.5s ease;
-}
-
-#contact.squeeze {
-    transition: all 0.5s ease;
-}

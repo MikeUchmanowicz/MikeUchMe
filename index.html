@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="navigation">
-            <button class="nav-btn" onclick="showModal('intro')">Intro</button>
+            <button class="nav-btn" onclick="showModal('intro')">Info & Resume</button>
             <button class="nav-btn" onclick="showModal('about')">About</button>
             <button class="nav-btn" onclick="showModal('contact')">Contact</button>
         </div>
@@ -43,29 +43,39 @@
         <div class="modal-inner">
             <h1 class="modal-title">Professional Info</h1>
             <ul class="modal-list">
-                <li><b class="modal-list-title">Name:</b> Michal Uchmanowicz</li>
-                <li><b class="modal-list-title">Title:</b> Software Developer / Architect</li>
-                <li><b class="modal-list-title">Location:</b> Phoenix, AZ</li>
-                <li><b class="modal-list-title">Languages:</b> English (Native), Polish (Professional Working Proficiency)</li>
-                <li><b class="modal-list-title">Education:</b> B.S. in Software Development, Grand Canyon University (GPA: 3.97, May 2023)</li>
-                <li><b class="modal-list-title">Awards:</b> Distinguished Trustee Scholarship, William Rainey Harper College</li>
-                <li><b class="modal-list-title">Workplace:</b> One of two Developers at Hoffenmer Inc. — 
+                <li><span class="modal-list-title">Name:</span> Michal Uchmanowicz</li>
+                <li><span class="modal-list-title">Title:</span> Software Developer / Architect</li>
+                <li><span class="modal-list-title">Location:</span> Phoenix, AZ</li>
+                <li><span class="modal-list-title">Languages:</span> English (Native), Polish (Professional Working Proficiency)</li>
+                <li><span class="modal-list-title">Education:</span> B.S. in Software Development, Grand Canyon University (GPA: 3.97, May 2023)</li>
+                <li><span class="modal-list-title">Awards:</span> Distinguished Trustee Scholarship, William Rainey Harper College</li>
+                <li><span class="modal-list-title">Workplace:</span> One of two Developers at Hoffenmer Inc. — 
                     Building internal tools, APIs, and full-stack platforms for DOT paperwork automation</li>
-                <li><b class="modal-list-title">Past Roles:</b> Transportation Consultant & Consortium Admin Asst. at Hoffenmer Inc. (2019–2023)</li>
-                <li><b class="modal-list-title">Software Languages:</b> Python, Java, C#, JavaScript, HTML/CSS, SQL, C++</li>
-                <li><b class="modal-list-title">Frameworks & Libraries:</b> FastAPI,Django, Spring Boot, ASP.NET, Angular, Express, .NET Core, Bootstrap</li>
-                <li><b class="modal-list-title">Concepts & Patterns:</b> OOP, IoC, SoC, N-Layer Architecture, MVC, REST APIs, Agile/Scrum, SDLC</li>
-                <li><b class="modal-list-title">Databases:</b> MySQL, MongoDB, PHPMyAdmin, Workbench, Compass</li>
-                <li><b class="modal-list-title">Cloud & DevOps:</b> AWS, Google Cloud, Azure, Heroku, Docker, Pipelines</li>
-                <li><b>Tools:</b> GitHub, Postman, Jira, Maven, MAMP, NodeJS, JUnit, Linux Terminal</li>
-                <li><b>Data Structures:</b> Linked Lists, Stacks, Hash Tables, BSTs, Recursion, DFS</li>
+                <li><span class="modal-list-title">Past Roles:</span> Transportation Consultant & Consortium Admin Asst. at Hoffenmer Inc. (2019–2023)</li>
+                <li><span class="modal-list-title">Software Languages:</span> Python, Java, C#, JavaScript, HTML/CSS, SQL, C++</li>
+                <li><span class="modal-list-title">Frameworks & Libraries:</span> FastAPI,Django, Spring Boot, ASP.NET, Angular, Express, .NET Core, Bootstrap</li>
+                <li><span class="modal-list-title">Concepts & Patterns:</span> OOP, IoC, SoC, N-Layer Architecture, MVC, REST APIs, Agile/Scrum, SDLC</li>
+                <li><span class="modal-list-title">Databases:</span> MySQL, MongoDB, PHPMyAdmin, Workbench, Compass</li>
+                <li><span class="modal-list-title">Cloud & DevOps:</span> AWS, Google Cloud, Azure, Heroku, Docker, Pipelines</li>
+                <li><span class="modal-list-title">Tools:</span> GitHub, Postman, Jira, Maven, MAMP, NodeJS, JUnit, Linux Terminal</li>
+                <li><span class="modal-list-title">Data Structures:</span> Linked Lists, Stacks, Hash Tables, BSTs, Recursion, DFS</li>
+                <li>
+                    <span class="modal-list-title">Work Experience:</span><br>
+                    Hoffenmer Inc., Software Developer<br>
+                    <i>Apr 2023 - Present | Scottsdale, AZ</i><br>
+                    <p>
+                    Responsible for building and maintaining internal software for agents in DOT paperwork processing. This included a central GUI application for agent management, client SMS/MMS communication, call logging, and workflow tracking with integrated data storage. Built secure AWS-hosted APIs for automation, third-party integrations, static file hosting, and webhooks (like handling client SMS/MMS within the beforementioned central app). Also created additional GUI tools for sales tracking and performance monitoring while ensuring system scalability, security, and seamless third-party integrations.
+                    </p>
+                </li>
             </ul>
         
+            
+            <span class="modal-reference">Please see my <a onclick="showModal('contact')" href="#">contact</a> page to contact me or connect with me.</span>
 
-            <span class="modal-reference">Please see my <a onclick="showModal('contact')" href="#">contact</a> page to get in touch or connect with me.</span>
-
-        
-            <button class="close-btn" onclick="closeModal()">Close</button>
+            <div class="modal-button-container">
+                <button class="download-btn" onclick="downloadResume()">Download Resume</button>
+                <button class="close-btn" onclick="closeModal()">Close</button>
+            </div>
         </div>
         <div class="modal-scroll-area"></div>
     </div>
@@ -87,7 +97,7 @@
             </p>
 
             
-            <span class="modal-reference">Please see my <a onclick="showModal('contact')" href="#">contact</a> page to get in touch or connect with me.</span>
+            <span class="modal-reference">Please see my <a onclick="showModal('contact')" href="#">contact</a> page to contact me or connect with me.</span>
             
             
             <button class="close-btn" onclick="closeModal()">Close</button>
@@ -100,15 +110,17 @@
         <div class="modal-inner">
             <h1 class="modal-title">Contact</h1>
             <div class="links">
+                <a href="#" onclick="downloadResume()">Resume</a>
                 <a href="https://github.com/MikeUchmanowicz" target="_blank" rel="noopener">GitHub</a>
                 <a href="https://www.linkedin.com/in/michal-uchmanowicz/" target="_blank" rel="noopener">LinkedIn</a>
                 <a href="https://www.facebook.com/MikeUchmanowicz/" target="_blank" rel="noopener">Facebook</a>
                 <a href="https://www.instagram.com/mike.uch/" target="_blank" rel="noopener">Instagram</a>
                 <a href="https://discord.com/users/CryogenicCrysis" target="_blank" rel="noopener">Discord</a>
                 <a href="https://www.youtube.com/@MikeUchmanowicz" target="_blank" rel="noopener">YouTube</a>
+                <a href="https://steamcommunity.com/id/CryogenicCrysis/" target="_blank" rel="noopener">Steam</a>
                 <a href="https://EndlessCustoms.co" target="_blank" rel="noopener">Endless Customs Co</a>
                 <a href="https://www.instagram.com/endlesscustomsco/" target="_blank" rel="noopener">ECC Instagram</a>
-                <a href="https://steamcommunity.com/id/CryogenicCrysis/" target="_blank" rel="noopener">Steam</a>
+                
             </div>
             <div class="contact-info">
                 <span><b>Email:</b> <a href="mailto:Mike.Uchmanowicz@gmail.com">Mike.Uchmanowicz@gmail.com</a></span>
