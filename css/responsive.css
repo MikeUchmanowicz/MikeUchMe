@@ -96,12 +96,12 @@
     .modal p {
         font-size: 1rem;
         letter-spacing: .15rem;
-        line-height: 1.4rem;
+        line-height: 1.5rem;
     }
 
     .modal-list {
         font-size: 1rem;
-        line-height: 1.25rem;
+        line-height: 1.5rem;
 
     }
 
@@ -122,9 +122,7 @@
         font-size: 1rem;
     }
 
-    #intro button,
-    #about button,
-    #contact button {
+    .modal button {
         padding: .5rem 1rem;
         font-size: 1rem;
         width: auto;
@@ -175,12 +173,12 @@
     }
 
     .modal-reference {
-        font-size: .75rem;
+        font-size: .85rem;
         line-height: 1rem;
     }
 
     .modal p {
-        font-size: .75rem;
+        font-size: .85rem;
     }
 
     .degree-info p {

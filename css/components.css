@@ -41,6 +41,10 @@
     padding-left: 1.5rem;
 }
 
+.modal-list-title {
+    color:#006699;
+}
+
 button {
     background: transparent;
     border: 2px solid #fff;
