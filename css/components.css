@@ -127,39 +127,38 @@ body.modal-open .footer {
     opacity: 0;
     position: fixed;
     left: 50%;
-    top: 45%;  /* Slightly offset up on desktop */
+    top: 45%;
     transform: translate(-50%, -50%);
     background: #1b1f22;
-    padding: 2rem 3rem;
+    padding: 3rem;
     border-radius: 10px;
     width: 90%;
-    max-width: 70rem;
-    max-height: 80vh;
+    max-width: 90vw;
+    max-height: 95vh;
     z-index: 1001;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     transition: all 0.35s ease;
     box-sizing: border-box;
-}
-
-#contact {
-    top: 35%;
-}
-
-.modal-scroll-area {
-    max-height: calc(80vh - 4rem);
-    overflow-y: auto;
-    overflow-x: hidden;
-    margin-right: -1rem;
-    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    pointer-events: none;
+    gap: 0;
 }
 
 .modal-inner {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 3rem;
-    width: 100%;
-    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    min-width: 200px;
+    align-items: flex-start;
+    overflow-y: auto;
+
+}
+
+/* Remove scroll area for desktop */
+.modal-scroll-area {
+    display: none;
 }
 
 /* Custom scrollbar styling */
@@ -169,13 +168,11 @@ body.modal-open .footer {
 
 .modal-scroll-area::-webkit-scrollbar-track {
     background: transparent;
-    margin: 10px;
 }
 
 .modal-scroll-area::-webkit-scrollbar-thumb {
     background: #0088CA;
     border-radius: 5px;
-    border: 2px solid #1b1f22;
 }
 
 .modal-scroll-area::-webkit-scrollbar-thumb:hover {
@@ -189,8 +186,9 @@ body.modal-open .footer {
 }
 
 .modal.visible {
-    display: flex;
     opacity: 1;
+    pointer-events: auto;
+
 }
 
 .modal-title {
@@ -216,7 +214,6 @@ body.modal-open .footer {
     box-sizing: border-box;
     padding: 0 1rem;
     margin: 0;
-
 }
 
 .modal .links a {
@@ -235,8 +232,7 @@ body.modal-open .footer {
     color: #1b1f22;
 }
 
-
-.modal ul {
+.modal-list {
     margin: 0;
     padding: 0;
     text-align: left;
@@ -257,7 +253,8 @@ body.modal-open .footer {
 
 .modal button {
     padding: 1rem 2rem;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
+    letter-spacing: .25rem;
 }
 
 .modal p {
@@ -298,11 +295,7 @@ body.modal-open .footer {
 }
 
 #contact {
-    padding: 2rem;
-    gap: 2rem;
-    width: 90%;
-    max-width: 70rem;
-    box-sizing: border-box;
+    top: 35%;
 }
 
 #contact .contact-info {

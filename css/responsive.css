@@ -49,37 +49,44 @@
         font-size: 1.2rem;
     }
     
+    .download-notice {
+        font-size: .75rem;
+        letter-spacing: .1rem;
+        padding: 0.5rem 1rem;
+    }
+
     .degree-info p {
-        font-size: 0.75rem;
-        letter-spacing: 0.25rem;
+        font-size: 0.85rem;
+        letter-spacing: 0.35rem;
     }
 
-    /* Modal adjustments for mobile */
-    #intro.modal,
-    #about.modal {
-        width: 90%;
-        height: 90vh;
-        padding: 1.5rem;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    .modal {
+        padding: 2rem .5rem 2rem 2rem;
+        max-height: 80vh;
+        display: flex;
     }
 
-    #intro .modal-scroll-area,
-    #about .modal-scroll-area {
-        max-height: calc(90vh - 3rem);
+    .modal-inner {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 1.5rem;
     }
 
-    #contact.modal {
-        width: auto;
-        height: auto;
-        max-width: 90%;
-        padding: 1.5rem;
-        top: 50%;
-        transform: translate(-50%, -50%);
+    .modal-inner::-webkit-scrollbar {
+        width: 5px;
     }
 
-    #contact .modal-scroll-area {
-        max-height: none;
+    .modal-inner::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    .modal-inner::-webkit-scrollbar-thumb {
+        background: rgba(49, 163, 230, 0.1);
+        border-radius: 4px;
+    }
+
+    .modal-scroll-area {
+        display: none;
     }
 
     .modal-title {
@@ -89,14 +96,26 @@
     .modal p {
         font-size: 1rem;
         letter-spacing: .15rem;
+        line-height: 1.4rem;
+    }
+
+    .modal-list {
+        font-size: 1rem;
+        line-height: 1.25rem;
+
     }
 
     .modal .links a {
         font-size: 1rem;
     }
 
-    .modal ul {
-        font-size: 1rem;
+    .modal-reference {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    #contact {
+        top: 40%;
     }
 
     #contact .contact-info {
@@ -107,7 +126,7 @@
     #about button,
     #contact button {
         padding: .5rem 1rem;
-        font-size: .75rem;
+        font-size: 1rem;
         width: auto;
     }
 
@@ -133,24 +152,48 @@
         font-size: 1.2rem;
     }
     
-    #intro.modal,
-    #about.modal,
-    #contact.modal {
-        padding: 1rem;
+    .modal {
+        padding: 1.5rem .5rem 1.5rem 1.5rem;
+        max-height: 80vh;
+        display: flex;
     }
 
-    #intro .modal-scroll-area,
-    #about .modal-scroll-area {
-        max-height: calc(90vh - 2rem);
+    .modal-inner {
+        flex: 1;
+        overflow-y: auto;
+        padding-right: 1rem;
+        gap: 1.5rem;
     }
+
 
     .modal-title {
         font-size: 2rem;
     }
 
+    .modal-list {
+        font-size: .85rem;
+    }
+
+    .modal-reference {
+        font-size: .75rem;
+        line-height: 1rem;
+    }
+
+    .modal p {
+        font-size: .75rem;
+    }
+
     .degree-info p {
         font-size: 0.5rem;
         letter-spacing: 0.25rem;
+    }
+
+    .links {
+        font-size: .75rem;
+    }
+
+    #contact {
+        top: 45%;
     }
 
     #contact .contact-info {
