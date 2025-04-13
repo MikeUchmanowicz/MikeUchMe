@@ -99,8 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Function to download Resume
     function downloadResume() {
         const link = document.createElement('a');
-        link.href = 'Michal_Uchmanowicz_Resume.pdf';
-        link.download = 'Michal_Uchmanowicz_Resume.pdf';
+        link.href = 'images/Michal_Uchmanowicz_Resume.pdf';
+        link.download = 'images/Michal_Uchmanowicz_Resume.pdf';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
