@@ -64,29 +64,9 @@
         padding: 2rem .5rem 2rem 2rem;
         max-height: 80vh;
         display: flex;
-    }
-
-    .modal-inner {
-        flex: 1;
-        overflow-y: auto;
-        padding-right: 1.5rem;
-    }
-
-    .modal-inner::-webkit-scrollbar {
-        width: 5px;
-    }
-
-    .modal-inner::-webkit-scrollbar-track {
-        background: transparent;
-    }
-
-    .modal-inner::-webkit-scrollbar-thumb {
-        background: rgba(49, 163, 230, 0.1);
-        border-radius: 4px;
-    }
-
-    .modal-scroll-area {
-        display: none;
+        top: 50%;
+        max-width: 80vw;
+        width: 80vw;
     }
 
     .modal-title {
@@ -115,7 +95,11 @@
     }
 
     #contact {
-        top: 40%;
+        top: 45%;
+    }
+
+    #about {
+        top: 50%;
     }
 
     #contact .contact-info {
@@ -154,6 +138,8 @@
         padding: 1.5rem .5rem 1.5rem 1.5rem;
         max-height: 80vh;
         display: flex;
+        max-width: 85vw;
+        width: 85vw;
     }
 
     .modal-inner {
@@ -197,6 +183,7 @@
 
     #contact {
         top: 45%;
+        gap: 1rem;
     }
 
     #contact .contact-info {

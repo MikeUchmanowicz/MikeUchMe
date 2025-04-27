@@ -132,13 +132,13 @@ body.modal-open .footer {
     opacity: 0;
     position: fixed;
     left: 50%;
-    top: 45%;
+    top: 50%;
     transform: translate(-50%, -50%);
     background: #1b1f22;
     padding: 3rem;
     border-radius: 10px;
-    width: 90%;
-    max-width: 90vw;
+    width: 60%;
+    max-width: 60vw;
     max-height: 95vh;
     z-index: 1001;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -158,36 +158,24 @@ body.modal-open .footer {
     min-width: 200px;
     align-items: flex-start;
     overflow-y: auto;
-
+    padding-right: 1.5rem;
 }
 
-/* Remove scroll area for desktop */
-.modal-scroll-area {
-    display: none;
+.modal-inner::-webkit-scrollbar {
+    width: 5px;
 }
 
-/* Custom scrollbar styling */
-.modal-scroll-area::-webkit-scrollbar {
-    width: 8px;
-}
-
-.modal-scroll-area::-webkit-scrollbar-track {
+.modal-inner::-webkit-scrollbar-track {
     background: transparent;
 }
 
-.modal-scroll-area::-webkit-scrollbar-thumb {
-    background: #0088CA;
-    border-radius: 5px;
+.modal-inner::-webkit-scrollbar-thumb {
+    background: rgba(49, 163, 230, 0.1);
+    border-radius: 4px;
 }
 
-.modal-scroll-area::-webkit-scrollbar-thumb:hover {
-    background: #006699;
-}
-
-/* Firefox scrollbar styling */
 .modal-scroll-area {
-    scrollbar-width: thin;
-    scrollbar-color: #0088CA #1b1f22;
+    display: none;
 }
 
 .modal.visible {
@@ -267,7 +255,7 @@ body.modal-open .footer {
     line-height: 1.5;
     font-size: 1.1rem;
     margin: 0;
-    letter-spacing: .25rem;
+    letter-spacing: .15rem;
     text-align: justify;
     text-justify: inter-word; /* improves spacing */
     overflow-wrap: break-word;
@@ -304,8 +292,11 @@ body.modal-open .footer {
     transform: translateY(-100%);
 }
 
+#about {
+    top: 40%;
+}
 #contact {
-    top: 35%;
+    top: 40%;
 }
 
 #contact .contact-info {
